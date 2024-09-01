@@ -49,7 +49,7 @@ export class RPCController {
             logInfo("[002] Destroyed Discord RPC client");
 
             editor.statusBarItem.text = "$(search-refresh) Reconnect to Discord Gateway";
-            editor.statusBarItem.command = "vscord.reconnect";
+            editor.statusBarItem.command = "cursorcord.reconnect";
             editor.statusBarItem.tooltip = "Reconnect to Discord Gateway";
 
             if (!config.get(CONFIG_KEYS.Behaviour.SuppressNotifications)) {
@@ -57,11 +57,11 @@ export class RPCController {
                     ? window.showErrorMessage("No Discord client detected")
                     : window.showErrorMessage(`Couldn't connect to Discord via RPC: ${error.name}`, "Reconnect"));
                 editor.statusBarItem.text = "$(search-refresh) Reconnect to Discord Gateway";
-                editor.statusBarItem.command = "vscord.reconnect";
+                editor.statusBarItem.command = "cursorcord.reconnect";
                 editor.statusBarItem.tooltip = "Reconnect to Discord Gateway";
 
                 if (result === "Reconnect") {
-                    commands.executeCommand("vscord.reconnect");
+                    commands.executeCommand("cursorcord.reconnect");
                 }
             }
 
@@ -85,14 +85,14 @@ export class RPCController {
         if (this.enabled) void this.enable();
         editor.statusBarItem.text = "$(globe) Connected to Discord";
         editor.statusBarItem.tooltip = "Click to disconnect from Discord Gateway";
-        editor.statusBarItem.command = "vscord.disconnect";
+        editor.statusBarItem.command = "cursorcord.disconnect";
         editor.statusBarItem.show();
     }
 
     private onDisconnected() {
         this.cleanUp();
         editor.statusBarItem.text = "$(search-refresh) Reconnect to Discord Gateway";
-        editor.statusBarItem.command = "vscord.reconnect";
+        editor.statusBarItem.command = "cursorcord.reconnect";
         editor.statusBarItem.tooltip = "Reconnect to Discord Gateway";
         editor.statusBarItem.show();
     }

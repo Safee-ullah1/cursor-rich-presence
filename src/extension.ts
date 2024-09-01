@@ -65,7 +65,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
         await controller.sendActivity(dataClass.editor != null);
     };
 
-    const enableCommand = commands.registerCommand("vscord.enable", async () => {
+    const enableCommand = commands.registerCommand("cursorcord.enable", async () => {
         await disable(false);
         await enable(false);
 
@@ -75,7 +75,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
             await window.showInformationMessage("Enabled Discord Rich Presence");
     });
 
-    const disableCommand = commands.registerCommand("vscord.disable", async () => {
+    const disableCommand = commands.registerCommand("cursorcord.disable", async () => {
         logInfo("Disabled Discord Rich Presence");
 
         await disable(false);
@@ -84,7 +84,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
             await window.showInformationMessage("Disabled Discord Rich Presence");
     });
 
-    const enableWorkspaceCommand = commands.registerCommand("vscord.workspace.enable", async () => {
+    const enableWorkspaceCommand = commands.registerCommand("cursorcord.workspace.enable", async () => {
         logInfo("Enabled Discord Rich Presence");
 
         await disable();
@@ -94,7 +94,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
             await window.showInformationMessage("Enabled Discord Rich Presence for this workspace");
     });
 
-    const disableWorkspaceCommand = commands.registerCommand("vscord.workspace.disable", async () => {
+    const disableWorkspaceCommand = commands.registerCommand("cursorcord.workspace.disable", async () => {
         logInfo("Disabled Discord Rich Presence");
 
         await disable();
@@ -103,7 +103,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
             await window.showInformationMessage("Disabled Discord Rich Presence for this workspace");
     });
 
-    const reconnectCommand = commands.registerCommand("vscord.reconnect", async () => {
+    const reconnectCommand = commands.registerCommand("cursorcord.reconnect", async () => {
         logInfo("Reconnecting to Discord Gateway...");
 
         editor.statusBarItem.text = "$(search-refresh) Connecting to Discord Gateway...";
@@ -117,24 +117,24 @@ export const registerCommands = (ctx: ExtensionContext) => {
                     window.showErrorMessage("Failed to reconnect to Discord Gateway");
 
                 editor.statusBarItem.text = "$(search-refresh) Reconnect to Discord Gateway";
-                editor.statusBarItem.command = "vscord.reconnect";
+                editor.statusBarItem.command = "cursorcord.reconnect";
                 editor.statusBarItem.tooltip = "Reconnect to Discord Gateway";
                 editor.statusBarItem.show();
             });
     });
 
-    const disconnectCommand = commands.registerCommand("vscord.disconnect", async () => {
+    const disconnectCommand = commands.registerCommand("cursorcord.disconnect", async () => {
         logInfo("Disconnecting from Discord Gateway...");
 
         await controller.destroy();
 
         editor.statusBarItem.text = "$(search-refresh) Reconnect to Discord Gateway";
-        editor.statusBarItem.command = "vscord.reconnect";
+        editor.statusBarItem.command = "cursorcord.reconnect";
         editor.statusBarItem.tooltip = "Reconnect to Discord Gateway";
         editor.statusBarItem.show();
     });
 
-    const enablePrivacyModeCommand = commands.registerCommand("vscord.enablePrivacyMode", async () => {
+    const enablePrivacyModeCommand = commands.registerCommand("cursorcord.enablePrivacyMode", async () => {
         logInfo("Enabled Privacy Mode");
 
         await togglePrivacyMode(true);
@@ -143,7 +143,7 @@ export const registerCommands = (ctx: ExtensionContext) => {
             await window.showInformationMessage("Enabled Privacy Mode.");
     });
 
-    const disablePrivacyModeCommand = commands.registerCommand("vscord.disablePrivacyMode", async () => {
+    const disablePrivacyModeCommand = commands.registerCommand("cursorcord.disablePrivacyMode", async () => {
         logInfo("Disabled Privacy Mode");
 
         await togglePrivacyMode(false);

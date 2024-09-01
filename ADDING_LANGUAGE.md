@@ -1,8 +1,8 @@
 # Adding a Programming Language
 
-Adding a Programming Language to the extension is easy, you can either add it to the repository OR define it in `vscord.additionalFileMapping`.
+Adding a Programming Language to the extension is easy, you can either add it to the repository OR define it in `cursorcord.additionalFileMapping`.
 
-To make the language appear you need to add it extension to the language data json or `vscord.additionalFileMapping`, then to make icon appear you need to add it to [assets/icons/](/assets/icons/).
+To make the language appear you need to add it extension to the language data json or `cursorcord.additionalFileMapping`, then to make icon appear you need to add it to [assets/icons/](/assets/icons/).
 
 Data for Programming Language will be located in [src/data/languages.json](/src/data/languages.json)
 Icon for Programming Language will be located in [assets/icons/](/assets/icons/)

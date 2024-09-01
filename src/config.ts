@@ -295,4 +295,4 @@ export type WorkspaceConfigurationWithType<Configuration extends Record<string, 
 
 export type ExtensionConfiguration = WorkspaceConfigurationWithType<ExtensionConfigurationType>;
 
-export const getConfig = () => workspace.getConfiguration("vscord") as ExtensionConfiguration;
+export const getConfig = () => workspace.getConfiguration("cursorcord") as ExtensionConfiguration;
