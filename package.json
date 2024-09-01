@@ -1,7 +1,7 @@
 {
     "name": "cursorcord",
     "displayName": "Discord Rich Presence for Cursor",
-    "version": "5.2.13",
+    "version": "5.2.14",
     "description": "Highly customizable Discord Rich Presence extension for Visual Studio Code & Cursor",
     "main": "dist/extension.js",
     "repository": "github:Safee-ullah1/cursor-rich-presence",
